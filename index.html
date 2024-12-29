@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport"content="width=device-width, initial-scale=1.0"> <title>Giveaway Contest</title> <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; } header { background: #ff5722; color: white;padding: 20px; text-align: center; } .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); } h1 { margin-bottom: 10px; } p { line-height: 1.6; } .form-group { margin-bottom: 15px; } .form-group label { display: block; margin-bottom: 5px; } .form-group input {width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; } button { padding: 10px 20px; background: #ff5722; color: white; border: none; border-radius: 5px; cursor: pointer; } button:hover { background: #e64a19; }.countdown { text-align: center; margin-top: 20px; font-size: 18px; font-weight: bold; } </style> </head> <body><header> <h1>Enter Our Giveaway!</h1> <p>Win exciting prizes! Don't miss out.</p> </header> <divclass="container"> <h2>How to Enter:</h2> <p>Fill out the form below to participate. The giveaway ends in:</p> <divclass="countdown" id="countdown">00:00:00</div> 
+<form action="https://formspree.io/f/mannjvno" method="POST">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+  <button type="submit">Enter Giveaway</button>
+</form>
+ </div> <script> // Countdown Timer Script const endDate = newDate("2024-12-31T23:59:59").getTime(); const countdownEl = document.getElementById("countdown"); functionupdateCountdown() { const now = new Date().getTime(); const distance = endDate - now; if (distance < 0) { countdownEl.textContent = "Giveaway Ended"; return; } const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); const seconds = Math.floor((distance % (1000 * 60)) / 1000); countdownEl.textContent = `${hours}:${minutes}:${seconds}`; }setInterval(updateCountdown, 1000); // Form Submission Scriptdocument.getElementById("giveawayForm").addEventListener("submit", function(e) { e.preventDefault(); alert("Thank you for entering the giveaway!"); // Add your form handling code here (e.g., send data to a server) }); </script> </body></html>
